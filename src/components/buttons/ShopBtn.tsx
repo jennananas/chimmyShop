@@ -1,6 +1,4 @@
-interface BtnProps {
-    textContent: string
-}
+import BtnProps from "./BtnInterface"
 
 export default function ShopBtn({ textContent }: BtnProps) {
     return (
