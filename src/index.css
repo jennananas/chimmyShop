@@ -1,0 +1,34 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    @font-face {
+        font-family: "Gavency";
+        src: url('/src/assets/fonts/gavency-regular/Gavency\ Free\ Regular.otf') format('opentype');
+    }
+    @font-face {
+        font-family: "Mozaic";
+        src: url('/src/assets/fonts/gavency-regular/mozaic/MozaicGEO-Light-BF65792617d17f9.otf') format('opentype');
+    }
+    @font-face {
+        font-family: "Mozaic Bold";
+        src: url('/src/assets/fonts/gavency-regular/mozaic/MozaicGEO-ExtraBold-BF65792617d95f4.otf') format('opentype');
+    }
+    
+    * {
+        @apply font-body
+        
+    }
+    *, *:before, *:after {
+        box-sizing: border-box;
+      }
+
+    h1 {
+        @apply font-heading
+    }
+
+
+    
+}
+
