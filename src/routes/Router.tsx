@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import Catalog from "../pages/Catalog";
 import Explore from "../pages/Explore";
+import ProductDetails from "../pages/ProductDetails";
 
 export default function Router() {
 
@@ -14,6 +15,11 @@ export default function Router() {
             path: "/all",
             element: <Catalog />
         }, {
+            path: "/product/:productId",
+            element: <ProductDetails />
+        },
+
+        {
             path: "/search",
             element: <Explore />
         }

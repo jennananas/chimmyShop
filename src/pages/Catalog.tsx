@@ -1,36 +1,11 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import ProductCard from "../components/Product/ProductCard";
-import { useState } from "react";
+import { useProductContext } from "../ProductContext";
 
 
 export default function Catalog() {
-    const [products, setProducts] = useState([{
-        name: "Dummy 1",
-        thumbnail: "src/assets/images/product1.jpg",
-        description: 'dummy text',
-        price: 39.99
-    }, {
-        name: "Dummy 2",
-        thumbnail: "src/assets/images/product2.jpg",
-        price: 39.99
-    },
-    {
-        name: "Dummy 1",
-        thumbnail: "src/assets/images/product1.jpg",
-        description: 'dummy text',
-        price: 39.99
-    }, {
-        name: "Dummy 1",
-        thumbnail: "src/assets/images/product1.jpg",
-        description: 'dummy text',
-        price: 39.99
-    }, {
-        name: "Dummy 1",
-        thumbnail: "src/assets/images/product1.jpg",
-        description: 'dummy text',
-        price: 39.99
-    }])
+    const { products } = useProductContext()
     return (
         <div className="w-100 h-screen flex flex-col">
             <Header />
@@ -47,7 +22,6 @@ export default function Catalog() {
 
                 </div>
             </div>
-
             <Footer />
         </div>
     )
