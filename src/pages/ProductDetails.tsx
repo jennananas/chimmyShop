@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { useEffect } from "react";
-import { useProductContext } from "../ProductContext";
+import { useProductContext } from "../context/ProductContext";
+import CartBtn from "../components/buttons/CartBtn";
 
 
 export default function ProductDetails() {
@@ -11,9 +11,6 @@ export default function ProductDetails() {
 
     const product = products.find((p) => p.productId === productId)
 
-    useEffect(() => {
-
-    }, [productId, products])
 
     if (!product) {
         return <div>Produit non trouvé</div>
@@ -36,16 +33,7 @@ export default function ProductDetails() {
                         ">{product.productName}</h2>
                         <p className="text-lg text-justify">{product.productDescription}</p>
                         <p className="text-3xl font-bodyBold">{product.productPrice}€</p>
-                        <button className='
-                                bg-green-600 
-                                text-zinc-100
-                                px-10 py-2 mt-5
-                                text-lg font-body
-                                h-12 w-fit
-                                rounded
-                                hover:bg-green-800
-                                hover:text-zinc-100
-                            '>Add to cart</button>
+                        <CartBtn textContent="Add to cart" height="h-12" width="w-fit" fontSize="text-lg" />
                     </div>
 
                 )}

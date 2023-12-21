@@ -3,6 +3,7 @@ import HeaderItem from "./HeaderItem"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import SearchBar from "./Searchbar"
+import { useCartContext } from "../../context/CartContext"
 
 
 export default function Header() {
@@ -18,8 +19,10 @@ export default function Header() {
         { path: "#", text: "cart", key: "cart" },
         { path: "#", text: "account", key: "account" },
     ];
-/*     const [cartCounter, setCartCounter] = useState<number>(0)
- */    return (
+
+    const { itemCount } = useCartContext()
+
+    return (
         <div className="flex justify-between
         border-b-[1px] border-zinc-950
         ">
@@ -44,7 +47,7 @@ export default function Header() {
             <div id="right-content" className="flex">
                 {menuItemsRight.map((item) => (
                     <Link to={item.path} key={item.key} className="border-l-[1px] border-zinc-950 ">
-                        <HeaderItem textContent={item.text} onClick={() => handleItemClick(item.key)}
+                        <HeaderItem textContent={item.text === "cart" ? `${item.text}(${itemCount})` : item.text} onClick={() => handleItemClick(item.key)}
                             isCurrent={currentMenuItem === item.key} />
                     </Link>
                 ))

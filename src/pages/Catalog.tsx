@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import ProductCard from "../components/Product/ProductCard";
-import { useProductContext } from "../ProductContext";
+import { useProductContext } from "../context/ProductContext";
 
 
 export default function Catalog() {

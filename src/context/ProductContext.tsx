@@ -6,7 +6,6 @@ interface Product {
     productDescription?: string;
     productPrice: number;
     productThumbnail: string;
-
 }
 
 interface ProductContextProps {

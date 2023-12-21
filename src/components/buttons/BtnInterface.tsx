@@ -1,3 +1,7 @@
 export default interface BtnProps {
-    textContent: string
+    textContent: string,
+    width?: string,
+    height?: string,
+    fontSize?: string
+
 }
