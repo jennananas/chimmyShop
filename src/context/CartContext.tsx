@@ -1,17 +1,26 @@
 import React, { createContext, useContext, ReactNode } from 'react';
+import Product from '../components/Product/ProductInterface';
+
+interface CartItem {
+    product: Product;
+    quantity: number
+}
 
 interface CartContextProps {
     itemCount: number;
     setItemCount: React.Dispatch<React.SetStateAction<number>>;
+    cartItems: CartItem[];
+    setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [itemCount, setItemCount] = React.useState<number>(0);
+    const [cartItems, setCartItems] = React.useState<CartItem[]>([])
 
     return (
-        <CartContext.Provider value={{ itemCount, setItemCount }}>
+        <CartContext.Provider value={{ itemCount, setItemCount, cartItems, setCartItems }}>
             {children}
         </CartContext.Provider>
     );

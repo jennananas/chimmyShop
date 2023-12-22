@@ -1,12 +1,14 @@
-import { useCartContext } from "../../context/CartContext"
 import BtnProps from "./BtnInterface"
 
-export default function CartBtn({ textContent, width, height, fontSize }: BtnProps) {
 
-  const { setItemCount } = useCartContext()
+export default function CartBtn({ textContent, width, height, fontSize, onClick }: BtnProps) {
+
   const handleAddToCart = () => {
-    setItemCount((prevCount) => prevCount + 1)
-  }
+    onClick();
+  };
+
+
+
 
   return (
     <button className={`

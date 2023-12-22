@@ -4,18 +4,15 @@ import Footer from "../components/Footer/Footer"
 
 export default function Explore() {
     return (
-        <div className='min-h-screen w-100 bg-zinc-50
-    flex flex-col'>
-            <Header></Header>
-            <div className='grow flex flex-col items-center px-24 gap-5 py-5'>
-                <h1 className='uppercase text-3xl font-bold'>Explore Categories</h1>
+        <div className='min-h-screen w-100 flex flex-col gap-5'>
+            <Header />
+            <div className='grow px-10'>
+                <span className="flex justify-center py-5 items-center">
+                    <h1 className='uppercase text-3xl font-bold'>Explore categories</h1>
+                </span>
                 <Cover />
-                {/*  <Link to='/all'>
-                    <ShopBtn textContent="Shop Now" />
-                </Link> */}
-
             </div>
-            <Footer></Footer>
+            <Footer />
         </div>
     )
 }

@@ -16,7 +16,7 @@ export default function Header() {
         { path: "/search", text: "search", key: "search" },
     ];
     const menuItemsRight = [
-        { path: "#", text: "cart", key: "cart" },
+        { path: "/cart", text: "cart", key: "cart" },
         { path: "#", text: "account", key: "account" },
     ];
 
