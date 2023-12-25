@@ -5,7 +5,6 @@ import { useCartContext } from "../context/CartContext";
 import CloseIcon from "../icons/CloseIcon";
 import { useReducer, useEffect } from "react";
 import Product from "../components/Product/ProductInterface";
-import CartBtn from "../components/buttons/CartBtn";
 import { Link } from "react-router-dom";
 
 interface CartItem {
