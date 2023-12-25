@@ -5,6 +5,8 @@ import { useCartContext } from "../context/CartContext";
 import CloseIcon from "../icons/CloseIcon";
 import { useReducer, useEffect } from "react";
 import Product from "../components/Product/ProductInterface";
+import CartBtn from "../components/buttons/CartBtn";
+import { Link } from "react-router-dom";
 
 interface CartItem {
     product: Product;
@@ -98,9 +100,9 @@ export default function Cart() {
                     <h1 className='uppercase text-3xl font-bold'>Your cart</h1>
                 </span>
                 {itemCount === 0 ? (
-                    <p>Votre panier est vide</p>
+                    <p className="text-center text-lg">Votre panier est vide</p>
                 ) : (
-                    <div className="flex flex-col items-center gap-5">
+                    <div className="flex flex-col items-center gap-12">
                         <div className="flex flex-col gap-5 px-10">
                             {cartItems.map((item) => (
                                 <div key={item.product.productId} className="flex justify-center items-center gap-20 w-100">
@@ -122,6 +124,21 @@ export default function Cart() {
                         <div className="flex justify-end items-center gap-10">
                             <h2 className="font-bodyBold text-xl">Total</h2>
                             <p className="font-body text-3xl">{state.totalPrice.toFixed(2)}€</p>
+                        </div>
+                        <div className="flex items-center justify-center gap-10">
+                            <Link to="/all" >
+                                <a className="underline cursor-pointer text-sm">Continuer les achats</a>
+                            </Link>
+
+                            <button className="
+                                bg-green-600 
+                                text-zinc-100
+                                px-10 py-2
+                                rounded
+                                text-2xl
+                                hover:bg-green-800
+                                hover:text-zinc-100
+                            ">Payer</button>
                         </div>
                     </div>
 
