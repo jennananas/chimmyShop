@@ -4,6 +4,7 @@ import Catalog from "../pages/Catalog";
 import Explore from "../pages/Explore";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
+import SignIn from "../pages/SignIn";
 
 export default function Router() {
 
@@ -27,6 +28,10 @@ export default function Router() {
         {
             path: "/cart",
             element: <Cart />
+        },
+        {
+            path: "/signin",
+            element: <SignIn />
         }
 
     ])

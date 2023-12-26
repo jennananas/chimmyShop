@@ -17,7 +17,7 @@ export default function Header() {
     ];
     const menuItemsRight = [
         { path: "/cart", text: "cart", key: "cart" },
-        { path: "#", text: "account", key: "account" },
+        { path: "/signin", text: "account", key: "account" },
     ];
 
     const { itemCount } = useCartContext()
