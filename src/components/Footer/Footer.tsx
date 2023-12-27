@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 export default function Footer() {
     const footerContent = [{
         sectionName: "Aide et Informations",
@@ -29,7 +29,15 @@ export default function Footer() {
                     <h2 className="uppercase font-bold">{section.sectionName}</h2>
                     <ul className="flex flex-col gap-2">
                         {section.sectionContent.map((title, index) => (
-                            <li key={index} className="hover:tex-zinc-300 hover:cursor-pointer">{title}</li>
+                            <li key={index} className="hover:text-zinc-300 hover:cursor-pointer">
+                                {title === "Crédits" ? (
+                                    <Link to="/credits" key={index}>
+                                        {title}
+                                    </Link>
+                                ) : (
+                                    title
+                                )}
+                            </li>
                         ))}
                     </ul>
                 </div>
