@@ -10,8 +10,14 @@ Shopping Cart project to practice routing with react router. Fake products with 
   
 ## Preview
 
-## Technologies
-![Frontend Icon](src/assets/images/frontend-icon.png)
+
+<div style="display: flex; align-items: center;">
+  <div style="margin-right: 10px;"> 
+    <h2>Technologies</h2>
+  </div>
+  <img src="src/assets/images/frontend-icon.png" width="48" alt="frontend icon">
+</div>
+
 - React
 - Typescript
 - TailwindCSS
