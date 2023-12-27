@@ -6,10 +6,11 @@ import { useCartContext } from "../../context/CartContext";
 import { useMenuContext } from "../../context/MenuContext";
 
 export default function Header() {
-    const currentItem = useMenuContext();
+    const { selectedItem, setSelectedItem } = useMenuContext();
+    const { itemCount } = useCartContext();
 
     const handleItemClick = (item: { path?: string; text: string; key?: string; }) => {
-        currentItem.setSelectedItem(item?.text);
+        setSelectedItem(item?.text);
     };
 
     const menuItemsLeft = [
@@ -22,7 +23,7 @@ export default function Header() {
         { path: "/signin", text: "account", key: "account" },
     ];
 
-    const { itemCount } = useCartContext();
+
 
     return (
         <div className="flex justify-between border-b-[1px] border-zinc-950">
@@ -35,14 +36,14 @@ export default function Header() {
                         to={item.path}
                         key={item.key}
                         className={`border-r-[1px] border-zinc-950 
-                        ${currentItem.selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
+                        ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
                         onClick={() => handleItemClick(item)}
                     >
                         <HeaderItem textContent={item.text} />
                     </Link>
                 ))}
             </div>
-            {currentItem.selectedItem === "search" && (
+            {selectedItem === "search" && (
                 <div className="items-center flex">
                     <SearchBar />
                 </div>
@@ -54,7 +55,7 @@ export default function Header() {
                         to={item.path}
                         key={item.key}
                         className={`border-l-[1px] border-zinc-950 
-                    ${currentItem.selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
+                    ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
                         onClick={() => handleItemClick(item)}
                     >
                         <HeaderItem

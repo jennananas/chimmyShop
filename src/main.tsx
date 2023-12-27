@@ -17,7 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </ProductProvider>
       </CartProvider>
     </MenuProvider>
-
-
   </React.StrictMode>,
 )
