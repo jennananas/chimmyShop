@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 
 interface Product {
     id: string;
@@ -20,17 +20,7 @@ export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children })
 
     const [products, setProducts] = React.useState<Product[]>([]);
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then((res) => res.json())
-            .then((data) => {
 
-                setProducts(data);
-            })
-            .catch((error) => {
-                console.error('Error while fetching:', error);
-            });
-    }, []);
 
     return (
         <ProductContext.Provider value={{ products, setProducts }}>

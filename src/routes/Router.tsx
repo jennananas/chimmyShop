@@ -16,7 +16,11 @@ export default function Router() {
         },
         {
             path: "/shop",
-            element: <Catalog />
+            element: <Catalog />,
+            children: [{
+                path: "/shop/:category",
+                element: <Catalog />
+            }],
         }, {
             path: "/product/:productId",
             element: <ProductDetails />
