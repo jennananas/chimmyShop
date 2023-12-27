@@ -15,7 +15,7 @@ export default function Router() {
             element: <App />,
         },
         {
-            path: "/all",
+            path: "/shop",
             element: <Catalog />
         }, {
             path: "/product/:productId",

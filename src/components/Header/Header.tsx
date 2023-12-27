@@ -12,7 +12,7 @@ export default function Header() {
         setCurrentMenuItem(prevItem => (prevItem === item ? null : item));
     };
     const menuItemsLeft = [
-        { path: "/all", text: "shop", key: "shop" },
+        { path: "/shop", text: "shop", key: "shop" },
         { path: "/search", text: "search", key: "search" },
     ];
     const menuItemsRight = [
