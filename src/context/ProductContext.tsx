@@ -1,11 +1,12 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode, useEffect } from 'react';
 
 interface Product {
-    productId: string;
-    productName: string;
-    productDescription?: string;
-    productPrice: number;
-    productThumbnail: string;
+    id: string;
+    title: string;
+    description?: string;
+    price: number;
+    category: string;
+    image: string;
 }
 
 interface ProductContextProps {
@@ -16,38 +17,20 @@ interface ProductContextProps {
 const ProductContext = createContext<ProductContextProps | undefined>(undefined);
 
 export const ProductProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const dummyProducts = [{
-        productId: "1",
-        productName: "Dummy 1",
-        productThumbnail: "src/assets/images/cover1.jpg",
-        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus enim est, sed pulvinar est vulputate quis. In iaculis aliquam enim id eleifend. Duis viverra mi sed leo cursus, quis lobortis felis luctus. Curabitur elementum neque nisi, et eleifend erat luctus sit amet. Ut tincidunt eleifend magna.',
-        productPrice: 39.99
-    }, {
-        productId: "2",
-        productName: "Dummy 2",
-        productThumbnail: "src/assets/images/product2.jpg",
-        productPrice: 39.99
-    },
-    {
-        productId: "3",
-        productName: "Dummy 1",
-        productThumbnail: "src/assets/images/product1.jpg",
-        productDescription: 'dummy text',
-        productPrice: 39.99
-    }, {
-        productId: "4",
-        productName: "Dummy 1",
-        productThumbnail: "src/assets/images/cover3.jpg",
-        productDescription: 'dummy text',
-        productPrice: 39.99
-    }, {
-        productId: "5",
-        productName: "Dummy 1",
-        productThumbnail: "src/assets/images/cover4.jpg",
-        productDescription: 'dummy text',
-        productPrice: 39.99
-    }]
-    const [products, setProducts] = React.useState<Product[]>(dummyProducts);
+
+    const [products, setProducts] = React.useState<Product[]>([]);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then((res) => res.json())
+            .then((data) => {
+
+                setProducts(data);
+            })
+            .catch((error) => {
+                console.error('Error while fetching:', error);
+            });
+    }, []);
 
     return (
         <ProductContext.Provider value={{ products, setProducts }}>

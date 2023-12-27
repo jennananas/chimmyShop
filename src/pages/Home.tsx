@@ -18,7 +18,7 @@ export default function Home() {
 
                 <div className="absolute inset-x-[45%] inset-y-96">
                     <div className="text-center">
-                        <Link to="/all">
+                        <Link to="/shop">
                             <ShopBtn textContent='Shop Now' />
                         </Link>
 

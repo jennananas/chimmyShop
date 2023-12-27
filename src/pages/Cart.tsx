@@ -18,7 +18,7 @@ export default function Cart() {
     /* Calcul de la valeur totale d'un panier */
     const calcTotalCart = (items: CartItem[]) => {
         const totalPrice = items.reduce((total, item) => {
-            const itemTotalPrice = item.product.productPrice * item.quantity;
+            const itemTotalPrice = item.product.price * item.quantity;
             return total + itemTotalPrice;
         }, 0);
 
@@ -32,20 +32,20 @@ export default function Cart() {
 
     const reducer = (
         state: { items: CartItem[]; totalPrice: number },
-        action: { type: 'INCREMENT' | 'DECREMENT' | 'REMOVE'; productId: string; productPrice: number }) => {
+        action: { type: 'INCREMENT' | 'DECREMENT' | 'REMOVE'; id: string; price: number }) => {
         switch (action.type) {
             case 'INCREMENT':
                 return {
                     ...state,
-                    totalPrice: state.totalPrice + action.productPrice
+                    totalPrice: state.totalPrice + action.price
                 }
             case 'DECREMENT':
                 return {
                     ...state,
-                    totalPrice: Math.max(state.totalPrice - action.productPrice, 0),
+                    totalPrice: Math.max(state.totalPrice - action.price, 0),
                 }
             case 'REMOVE':
-                const updatedItems = state.items.filter(item => item.product.productId !== action.productId);
+                const updatedItems = state.items.filter(item => item.product.id !== action.id);
                 const updatedTotalPrice = calcTotalCart(updatedItems);
                 setCartItems(updatedItems)
                 return {
@@ -62,7 +62,7 @@ export default function Cart() {
     /* Ajout ou retrait d'un produit du panier */
     const updateCartItemQuantity = (item: CartItem, newQuantity: number) => {
         const updatedCartItems = cartItems.map((cartItem) =>
-            cartItem.product.productId === item.product.productId
+            cartItem.product.id === item.product.id
                 ? { ...cartItem, quantity: newQuantity }
                 : cartItem
         );
@@ -70,13 +70,13 @@ export default function Cart() {
     };
 
     const handleIncrement = (item: CartItem) => {
-        dispatch({ type: 'INCREMENT', productId: item.product.productId, productPrice: item.product.productPrice });
+        dispatch({ type: 'INCREMENT', id: item.product.id, price: item.product.price });
         updateCartItemQuantity(item, item.quantity + 1);
     };
 
     const handleDecrement = (item: CartItem) => {
         if (item.quantity > 1) {
-            dispatch({ type: 'DECREMENT', productId: item.product.productId, productPrice: item.product.productPrice });
+            dispatch({ type: 'DECREMENT', id: item.product.id, price: item.product.price });
             updateCartItemQuantity(item, item.quantity - 1);
         }
     };
@@ -86,8 +86,8 @@ export default function Cart() {
         setItemCount(cartItems.reduce((total, item) => total + item.quantity, 0));
     }, [cartItems, setItemCount]);
 
-    const handleRemoveItem = (productId: string) => {
-        dispatch({ type: 'REMOVE', productId, productPrice: 0 });
+    const handleRemoveItem = (id: string) => {
+        dispatch({ type: 'REMOVE', id, price: 0 });
     }
 
 
@@ -104,19 +104,19 @@ export default function Cart() {
                     <div className="flex flex-col items-center gap-12">
                         <div className="flex flex-col gap-5 px-10">
                             {cartItems.map((item) => (
-                                <div key={item.product.productId} className="flex justify-center items-center gap-20 w-100">
-                                    <CloseIcon onClick={() => handleRemoveItem(item.product.productId)} />
-                                    <img src={item.product.productThumbnail} alt="" className="h-48 w-48 object-cover" />
+                                <div key={item.product.id} className="flex justify-center items-center gap-20 w-100">
+                                    <CloseIcon onClick={() => handleRemoveItem(item.product.id)} />
+                                    <img src={item.product.image} alt="" className="h-48 w-48 object-contain p-5" />
                                     <div className="flex flex-col w-80 h-24 overflow-hidden">
-                                        <h2 className="font-bodyBold text-xl">{item.product.productName}</h2>
-                                        <p>{item.product.productDescription}</p>
+                                        <h2 className="font-bodyBold text-xl">{item.product.title}</h2>
+                                        <p>{item.product.description}</p>
                                     </div>
                                     <div className="flex gap-3 items-center border border-zinc-100">
                                         <button className="bg-zinc-100  p-2" onClick={() => handleDecrement(item)}>-</button>
                                         <span className="">{item.quantity}</span>
                                         <button className="bg-zinc-100  p-2" onClick={() => handleIncrement(item)}>+</button>
                                     </div>
-                                    <p className="font-bodyBold text-lg">{item.product.productPrice}€</p>
+                                    <p className="font-bodyBold text-lg">{item.product.price}€</p>
                                 </div>
                             ))}
                         </div>
