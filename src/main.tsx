@@ -6,14 +6,17 @@ import { ProductProvider } from '../src/context/ProductContext.tsx'
 import {
   CartProvider
 } from './context/CartContext.tsx'
+import { MenuProvider } from './context/MenuContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CartProvider>
-      <ProductProvider>
-        <Router />
-      </ProductProvider>
-    </CartProvider>
+    <MenuProvider>
+      <CartProvider>
+        <ProductProvider>
+          <Router />
+        </ProductProvider>
+      </CartProvider>
+    </MenuProvider>
 
 
   </React.StrictMode>,

@@ -4,6 +4,6 @@ export default interface BtnProps {
     width?: string,
     height?: string,
     fontSize?: string,
-    onClick: () => void
+    onClick?: () => void
 
 }

@@ -22,7 +22,7 @@ export default function SignIn() {
     };
 
     return (
-        <div className="h-screen">
+        <div className="w-100 h-screen flex flex-col">
             <Header />
             <div className="flex grow">
                 <div
