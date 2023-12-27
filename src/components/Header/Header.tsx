@@ -28,7 +28,7 @@ export default function Header() {
     return (
         <div className="flex justify-between border-b-[1px] border-zinc-950">
             <div id="left-content" className="flex">
-                <Link to="/" className="border-r-[1px] border-zinc-950 px-5 py-3">
+                <Link to="/" className="border-r-[1px] border-zinc-950 px-5 py-3" onClick={() => setSelectedItem("")}>
                     <LogoIcon size="50px" />
                 </Link>
                 {menuItemsLeft.map((item) => (

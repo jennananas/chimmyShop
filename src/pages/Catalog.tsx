@@ -4,7 +4,7 @@ import ProductCard from "../components/Product/ProductCard";
 import { useProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import ProductsAPI from "../components/productsApi";
+import ProductsAPI from "../components/apis/productsApi";
 
 
 
