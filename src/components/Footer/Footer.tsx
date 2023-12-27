@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
 export default function Footer() {
     const footerContent = [{
-        sectionName: "Aide et Informations",
-        sectionContent: ["Assistance", "Suivi commande", "Livraison et retours"]
+        sectionName: "Help & Infos",
+        sectionContent: ["Assistance", "Orders", "Deliveries & Returns"]
     }, {
         sectionName: "Contact",
         sectionContent: ["Facebook", "Twitter", "Instagram"]
     }, {
-        sectionName: "A Propos",
-        sectionContent: ["Version", "Crédits"]
+        sectionName: "About Us",
+        sectionContent: ["Version", "Credits"]
     }
     ]
     return (
@@ -21,7 +21,7 @@ export default function Footer() {
         ">
             <div className="flex flex-col gap-2">
                 <h2 className="uppercase font-bold">Chimmy</h2>
-                <p>Developpé par jenna_nanas</p>
+                <p>Made by jenna_nanas</p>
                 <p>©2023</p>
             </div>
             {footerContent.map((section, index) => (
@@ -29,7 +29,7 @@ export default function Footer() {
                     <h2 className="uppercase font-bold">{section.sectionName}</h2>
                     <ul className="flex flex-col gap-2">
                         {section.sectionContent.map((title, index) => (
-                            <li key={index} className="hover:text-zinc-300 hover:cursor-pointer">
+                            <li key={index} className="hover:text-zinc-500 hover:cursor-pointer">
                                 {title === "Crédits" ? (
                                     <Link to="/credits" key={index}>
                                         {title}

@@ -36,7 +36,7 @@ export default function Header() {
                         to={item.path}
                         key={item.key}
                         className={`border-r-[1px] border-zinc-950 
-                        ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
+                        ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-0 text-zinc-800'}`}
                         onClick={() => handleItemClick(item)}
                     >
                         <HeaderItem textContent={item.text} />
@@ -55,7 +55,7 @@ export default function Header() {
                         to={item.path}
                         key={item.key}
                         className={`border-l-[1px] border-zinc-950 
-                    ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-50 text-zinc-800'}`}
+                    ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-0 text-zinc-800'}`}
                         onClick={() => handleItemClick(item)}
                     >
                         <HeaderItem
