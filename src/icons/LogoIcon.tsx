@@ -1,9 +1,9 @@
 interface LogoIconProps {
-    size: string;
+    className: string;
 }
-export default function LogoIcon({ size }: LogoIconProps) {
+export default function LogoIcon({ className }: LogoIconProps) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width={size}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className={className}>
             <circle cx="78" cy="14" r="1" fill="#f1bc19" />
             <circle cx="50" cy="50" r="38" fill="#f9dbd2" />
             <circle cx="84" cy="16" r="4" fill="#f1bc19" />

@@ -12,7 +12,7 @@ export default function HeaderItem({ textContent, onClick }: HeaderItemProps) {
 
     return (
         <span className={` 
-        px-10 py-3 
+        md:px-10 md:py-3 p-3
         flex items-center 
         grow
         cursor-pointer
@@ -20,8 +20,9 @@ export default function HeaderItem({ textContent, onClick }: HeaderItemProps) {
         `}
             onClick={onClick}>
             <p className="
-            hover:underline
-            hover:underline-offset-8
+            md:hover:underline
+            md:hover:underline-offset-8
+            
             "
             >{textContent}</p>
         </span>

@@ -26,16 +26,16 @@ export default function Header() {
 
 
     return (
-        <div className="flex justify-between border-b-[1px] border-zinc-950">
+        <div className="flex md:justify-between border-b-[1px] border-zinc-950">
             <div id="left-content" className="flex">
-                <Link to="/" className="border-r-[1px] border-zinc-950 px-5 py-3" onClick={() => setSelectedItem("")}>
-                    <LogoIcon size="50px" />
+                <Link to="/" className="md:border-r-[1px] border-zinc-950 md:px-5 md:py-3 p-3" onClick={() => setSelectedItem("")}>
+                    <LogoIcon className="w-[32px] md:w-[50px]" />
                 </Link>
                 {menuItemsLeft.map((item) => (
                     <Link
                         to={item.path}
                         key={item.key}
-                        className={`border-r-[1px] border-zinc-950 
+                        className={` border-zinc-950 border-l-[1px] md:border-r-[1px] md:border-l-0
                         ${selectedItem === item.text ? 'bg-zinc-800 text-zinc-50' : 'bg-zinc-0 text-zinc-800'}`}
                         onClick={() => handleItemClick(item)}
                     >
@@ -44,10 +44,11 @@ export default function Header() {
                 ))}
             </div>
             {selectedItem === "search" && (
-                <div className="items-center flex">
+                <div className="items-center lg:flex hidden">
                     <SearchBar />
                 </div>
             )}
+
 
             <div id="right-content" className="flex">
                 {menuItemsRight.map((item) => (
