@@ -6,12 +6,12 @@ import { Link } from "react-router-dom"
 export default function Home() {
 
     return (
-        <div className="w-100 h-screen flex flex-col">
+        <div className="max-w-screen h-screen flex flex-col">
             <Header />
 
-            <div className="relative grow">
+            <div className="relative grow w-100">
                 <img src="src/assets/images/cover1.jpg" className="absolute w-full h-full object-cover opacity-90" alt="" />
-                <div className="absolute md:inset-x-[45%] md:inset-y-96 inset-x-[20%] inset-y-96 ">
+                <div className="absolute md:inset-x-[45%] md:inset-y-[50%] inset-x-[20%] inset-y-96">
                     <div className="text-center">
                         <Link to="/shop">
                             <ShopBtn textContent='Shop Now' />

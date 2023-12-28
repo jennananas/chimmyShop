@@ -30,13 +30,13 @@ export default function Catalog() {
     }, [category, setProducts]);
 
     return (
-        <div className="w-100 h-screen flex flex-col gap-5">
+        <div className="w-screen h-screen flex flex-col">
             <Header />
-            <div className="grow px-10">
+            <div className="grow lg:px-10">
                 <span className="flex justify-center py-5 items-center">
                     <h1 className='uppercase text-3xl font-bold'>Shop {category ? category : "all"}</h1>
                 </span>
-                <div id="products" className="grid grid-cols-4 justify-center
+                <div id="products" className="grid md:grid-cols-2 lg:grid-cols-4 justify-center
                 px-10 py-5 gap-20">
                     {products.map((product, index) => (
                         <ProductCard key={index} product={product} />

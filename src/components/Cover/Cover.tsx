@@ -21,7 +21,7 @@ export default function Cover() {
     }]
 
     return (
-        <div className="grid grid-cols-4 gap-2 pt-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 pt-5">
             {
                 covers.map((cover, index) => (
                     <Link to={`/shop/${cover.categoryName}`} key={index}>

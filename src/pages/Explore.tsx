@@ -8,7 +8,7 @@ export default function Explore() {
             <Header />
             <div className='grow px-10'>
                 <span className="flex justify-center py-5 items-center">
-                    <h1 className='uppercase text-3xl font-bold'>Explore categories</h1>
+                    <h1 className='uppercase text-3xl font-bold text-center'>Explore categories</h1>
                 </span>
                 <Cover />
             </div>
