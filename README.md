@@ -7,6 +7,7 @@ Shopping Cart project to practice routing with react router. Fake products with 
 - Search products by category
 - Add items to cart
 - Update cart
+- Responsive
   
 ## Preview
 
