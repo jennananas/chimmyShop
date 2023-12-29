@@ -1,9 +1,16 @@
-import BtnProps from "./BtnInterface"
 import { useCartContext } from "../../context/CartContext";
+import Product from "../Product/ProductInterface";
 
 
+interface CartBtnProps {
+  textContent: string,
+  width?: string,
+  height?: string,
+  fontSize?: string
+  product: Product
 
-export default function CartBtn({ textContent, width, height, fontSize, product }: BtnProps) {
+}
+export default function CartBtn({ textContent, width, height, fontSize, product }: CartBtnProps) {
 
   const { setItemCount, setCartItems, cartItems } = useCartContext();
   const handleAddToCart = () => {
