@@ -2,6 +2,7 @@ import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
 import ShopBtn from "../components/buttons/ShopBtn"
 import { Link } from "react-router-dom"
+import cover1 from "@/assets/images/cover1.jpg"
 
 export default function Home() {
 
@@ -10,7 +11,7 @@ export default function Home() {
             <Header />
 
             <div className="relative grow w-100">
-                <img src="src/assets/images/cover1.jpg" className="absolute w-full h-full object-cover opacity-90" alt="" />
+                <img src={cover1} className="absolute w-full h-full object-cover opacity-90" alt="" />
                 <div className="absolute md:inset-x-[45%] md:inset-y-[50%] inset-x-[20%] inset-y-96">
                     <div className="text-center">
                         <Link to="/shop">

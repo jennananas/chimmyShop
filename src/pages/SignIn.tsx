@@ -2,6 +2,7 @@ import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
 import Form from "../components/Form"
 import { useState } from "react"
+import coverSI from "@/assets/images/coverSI.jpg"
 
 export default function SignIn() {
     const signInFields = [
@@ -27,7 +28,7 @@ export default function SignIn() {
             <div className="flex grow">
                 <div className="relative md:hidden">
                     <div className="flex items-center justify-center h-full">
-                        <img src="src/assets/images/coverSI.jpg" alt="Palm Trees" className="h-full w-full object-cover" />
+                        <img src={coverSI} alt="Palm Trees" className="h-full w-full object-cover" />
                     </div>
                     <div className="absolute top-[15%] w-full h-2/3 bg-white/30 backdrop-blur-sm
                     flex flex-col justify-center">
@@ -63,7 +64,7 @@ export default function SignIn() {
                             }`}
                     >
                         <div className="flex items-center justify-center h-full">
-                            <img src="src/assets/images/coverSI.jpg" alt="Palm Trees" className="h-full w-full object-cover" />
+                            <img src={coverSI} alt="Palm Trees" className="h-full w-full object-cover" />
                         </div>
                     </div>
                     <div className="flex-1 flex items-center justify-center">

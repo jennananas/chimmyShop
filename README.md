@@ -1,4 +1,5 @@
 # chimmyShop 
+https://chimmyshop.netlify.app/
 ## The Odin Project : Shopping Cart
 Shopping Cart project to practice routing with react router. Fake products with [Fake Store API](https://fakestoreapi.com/).
 
@@ -8,9 +9,6 @@ Shopping Cart project to practice routing with react router. Fake products with 
 - Add items to cart
 - Update cart
 - Responsive
-  
-## Preview
-
 
 ## Technologies
 - React
